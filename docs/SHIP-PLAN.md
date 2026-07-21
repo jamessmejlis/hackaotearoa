@@ -217,12 +217,19 @@ Parallel James errands (none blocked by the design work — do any time):
       page. Needed before any event runs where James isn't in the room.
       Acceptance: `/conduct` linked from the footer; consent line visible on
       the page.
-- [ ] **[James + Claude] Deploy to Vercel + attach domain** — `gh repo create
-      hack-aotearoa --public` (or private — your call), import to Vercel,
-      accept Next.js defaults, add hackaotearoa.nz + www, set
-      `NEXT_PUBLIC_SITE_URL=https://hackaotearoa.nz` all environments,
-      redeploy. James: Vercel/registrar auth steps. Acceptance: production
-      URL serves the page over the apex domain with valid OG tags.
+- [x] **DONE 2026-07-14 (partial): repo + Vercel project live.** GitHub:
+      `jamessmejlis/hackaotearoa` (public); Vercel project `hackaotearoa`
+      git-connected, first production deploy Ready at
+      https://hackaotearoa.vercel.app (blank "coming soon" placeholder,
+      Next.js 15 App Router + Tailwind + Bun, `bun run build` passing).
+      Domains purchased on Cloudflare (2026-07-14).
+- [ ] **[James] Attach domains + DNS** — Vercel → hackaotearoa project →
+      Settings → Domains → add hackaotearoa.nz + www (+ .co.nz redirect);
+      add the records Vercel shows in Cloudflare DNS (set the proxy toggle to
+      "DNS only" on those records — Cloudflare proxying in front of Vercel
+      causes redirect/SSL loops). Then set
+      `NEXT_PUBLIC_SITE_URL=https://hackaotearoa.nz` (all environments) and
+      redeploy. Acceptance: apex domain serves the page with valid SSL.
 - [ ] **[James] Hand the link to Lane and Sinead** — Lane: as the WFW
       cross-promo target. Sinead (GridAKL): unblocks the drafted newsletter
       feature (`gridakl-newsletter-feature-draft.md`). Also update Luma page,
