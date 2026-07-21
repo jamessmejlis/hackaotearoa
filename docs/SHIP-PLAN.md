@@ -224,12 +224,17 @@ Parallel James errands (none blocked by the design work — do any time):
       Next.js 15 App Router + Tailwind + Bun, `bun run build` passing).
       Domains purchased on Cloudflare (2026-07-14).
 - [ ] **[James] Attach domains + DNS** — Vercel → hackaotearoa project →
-      Settings → Domains → add hackaotearoa.nz + www (+ .co.nz redirect);
-      add the records Vercel shows in Cloudflare DNS (set the proxy toggle to
-      "DNS only" on those records — Cloudflare proxying in front of Vercel
-      causes redirect/SSL loops). Then set
-      `NEXT_PUBLIC_SITE_URL=https://hackaotearoa.nz` (all environments) and
-      redeploy. Acceptance: apex domain serves the page with valid SSL.
+      Settings → Domains → add hackaotearoa.nz, accepting Vercel's
+      recommendation: **www.hackaotearoa.nz is canonical**, apex 308-redirects
+      to it (+ .co.nz as a redirect domain). Add the records Vercel shows in
+      Cloudflare DNS: CNAME for www (serving), A for @ (redirect) — both set
+      to "DNS only"/grey cloud (Cloudflare proxying in front of Vercel causes
+      redirect/SSL loops), SSL mode Full (strict). Then set
+      `NEXT_PUBLIC_SITE_URL=https://www.hackaotearoa.nz` (all environments —
+      must match the canonical www form) and redeploy. Short form
+      `hackaotearoa.nz` stays fine in all marketing copy; it redirects.
+      Acceptance: www serves the page with valid SSL; apex and .co.nz
+      redirect to it.
 - [ ] **[James] Hand the link to Lane and Sinead** — Lane: as the WFW
       cross-promo target. Sinead (GridAKL): unblocks the drafted newsletter
       feature (`gridakl-newsletter-feature-draft.md`). Also update Luma page,
