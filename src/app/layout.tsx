@@ -1,21 +1,42 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Archivo, Archivo_Black } from "next/font/google";
 import "./globals.css";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Self-hosted at build time by next/font — no request to Google at runtime.
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const archivoBlack = Archivo_Black({
+  variable: "--font-archivo-black",
   subsets: ["latin"],
+  weight: "400",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "HackAotearoa — a co-working day for builders",
-  description:
-    "A free fortnightly co-working day for founders, indie hackers, and builders. Auckland, at GridAKL. One rule: be helpful.",
+  metadataBase: new URL(SITE_URL),
+  title: "HackAotearoa — the co-working community for NZ startup builders",
+  description: SITE_DESCRIPTION,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "en_NZ",
+    url: "/",
+    title: "HackAotearoa — the co-working community for NZ startup builders",
+    description: SITE_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "HackAotearoa — the co-working community for NZ startup builders",
+    description: SITE_DESCRIPTION,
+  },
 };
 
 export default function RootLayout({
@@ -24,11 +45,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en-NZ" className={`${archivo.variable} ${archivoBlack.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

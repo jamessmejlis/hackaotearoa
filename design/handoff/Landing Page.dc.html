@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Archivo:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Archivo,system-ui,sans-serif}
+a{color:inherit}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:{{ c.paper }};color:{{ c.ink }}">
+
+  <header style="position:sticky;top:0;z-index:40;background:{{ c.ink }};border-bottom:1px solid rgba(255,255,255,.14)">
+    <div style="max-width:720px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+      <a href="#top" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+        <span style="font:400 21px/1 'Archivo Black',sans-serif;letter-spacing:-.025em;color:{{ c.paper }}">HackAotearoa<span style="color:{{ c.accentOnDark }}">*</span></span>
+      </a>
+      <div style="display:flex;align-items:center;gap:22px">
+        <a href="#day" style="font:500 14px Archivo,sans-serif;text-decoration:none;color:{{ c.mutedOnDark }}">The day</a>
+        <a href="#questions" style="font:500 14px Archivo,sans-serif;text-decoration:none;color:{{ c.mutedOnDark }}">Questions</a>
+        <a href="{{ lumaUrl }}" style="font:600 14px Archivo,sans-serif;text-decoration:none;background:{{ c.accent }};color:{{ c.onAccent }};padding:9px 15px;border-radius:7px">RSVP</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="top" style="background:{{ c.ink }};color:{{ c.paper }}">
+    <div style="max-width:720px;margin:0 auto;padding:58px 32px 62px;display:flex;flex-direction:column;gap:26px">
+
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <h1 style="margin:0;font:400 58px/1 'Archivo Black',sans-serif;letter-spacing:-.032em">HackAotearoa<span style="color:{{ c.accentOnDark }}">*</span></h1>
+        <div style="font: 400 27px/1.15 'Archivo Black',sans-serif; letter-spacing: -.025em; color: {{ c.paper }}; font-size: 26px">The co-working community for NZ startup builders.</div>
+        <span style="font:600 12px Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:{{ c.mutedOnDark }}">Est. March 2026</span><div style="font:italic 500 20px/1.3 Archivo,sans-serif;color:{{ c.accentOnDark }}">Building solo, together.</div>
+      </div>
+
+      <div style="font:400 17px/1.65 Archivo,sans-serif;color:{{ c.paper }}">
+        Free, every second Friday at GridAKL, Wynyard Quarter, Auckland.<br>
+        Next session: <strong style="font-weight:700;color:{{ c.accentOnDark }}">{{ sessionDate }}</strong>, {{ sessionTime }}.
+      </div>
+
+      <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+        <a href="{{ lumaUrl }}" style="font:600 16px Archivo,sans-serif;text-decoration:none;background:{{ c.accent }};color:{{ c.onAccent }};padding:15px 24px;border-radius:9px">RSVP on Luma →</a>
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  <main style="max-width:720px;margin:0 auto;padding:64px 32px 104px;display:flex;flex-direction:column;gap:76px">
+
+    <section id="what" style="display:flex;flex-direction:column;gap:26px">
+      <div style="font:600 12px Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:{{ c.muted }};border-top:1.5px solid {{ c.border }};padding-top:14px">What it is</div>
+      <p style="margin:0;font:400 17px/1.7 Archivo,sans-serif;color:{{ c.ink }}">HackAotearoa is a free co-working day for startup founders, indie hackers, designers and makers building their own thing. Every second Friday in Auckland: one full day, working alongside other people doing the same. No program, no curriculum, no pitching.</p>
+      <p style="margin:0;font:400 17px/1.7 Archivo,sans-serif;color:{{ c.ink }}">On any given Friday there's someone launching a website, someone wiring up an AI agent, someone chasing first customers, someone rewriting a pitch. Different projects, same fight.</p><div style="display:flex;flex-direction:column;gap:16px;padding-top:6px">
+        <div style="display:grid;grid-template-columns:18px 1fr;gap:12px;align-items:baseline">
+          <span style="font:400 15px/1 'Archivo Black',sans-serif;color:{{ c.accentText }}">*</span>
+          <span style="font:400 16.5px/1.6 Archivo,sans-serif;color:{{ c.ink }}"><strong style="font-weight:700">Momentum.</strong> A full day carved out to ship, next to people doing the same.</span>
+        </div>
+        <div style="display:grid;grid-template-columns:18px 1fr;gap:12px;align-items:baseline">
+          <span style="font:400 15px/1 'Archivo Black',sans-serif;color:{{ c.accentText }}">*</span>
+          <span style="font:400 16.5px/1.6 Archivo,sans-serif;color:{{ c.ink }}"><strong style="font-weight:700">Getting unstuck.</strong> Someone in the room has hit your problem before: pricing, landing pages, that 2pm bug.</span>
+        </div>
+        <div style="display:grid;grid-template-columns:18px 1fr;gap:12px;align-items:baseline">
+          <span style="font:400 15px/1 'Archivo Black',sans-serif;color:{{ c.accentText }}">*</span>
+          <span style="font:400 16.5px/1.6 Archivo,sans-serif;color:{{ c.ink }}"><strong style="font-weight:700">People who get it.</strong> Building your own thing is lonely. This is the fix.</span>
+        </div>
+      </div>
+      
+      <div style="background:{{ c.surface }};border-radius:12px;padding:24px 26px;font:400 18px/1.5 'Archivo Black',sans-serif;letter-spacing:-.018em;color:{{ c.ink }}">80+ builders through the door since March.</div>
+    </section>
+
+    <section id="day" style="display:flex;flex-direction:column;gap:20px;scroll-margin-top:80px">
+      <div style="font:600 12px Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:{{ c.muted }};border-top:1.5px solid {{ c.border }};padding-top:14px">The day</div>
+      <div style="display:flex;flex-direction:column">
+        <div style="display:grid;grid-template-columns:76px 1fr;gap:18px;align-items:baseline;padding:14px 0;border-bottom:1px solid {{ c.border }}">
+          <span style="font:600 15px Archivo,sans-serif;color:{{ c.accentText }}">9:00</span>
+          <span style="font:400 16.5px/1.55 Archivo,sans-serif">doors open, coffee, grab a desk</span>
+        </div>
+        <div style="display:grid;grid-template-columns:76px 1fr;gap:18px;align-items:baseline;padding:14px 0;border-bottom:1px solid {{ c.border }}">
+          <span style="font:600 15px Archivo,sans-serif;color:{{ c.accentText }}">9:30</span>
+          <span style="font:400 16.5px/1.55 Archivo,sans-serif">intros: who you are, what you're building, what you want to get done today</span>
+        </div>
+        <div style="display:grid;grid-template-columns:76px 1fr;gap:18px;align-items:baseline;padding:14px 0;border-bottom:1px solid {{ c.border }}">
+          <span style="font:600 15px Archivo,sans-serif;color:{{ c.accentText }}">3:00</span>
+          <span style="font:400 16.5px/1.55 Archivo,sans-serif">demos: 5 minutes each, progress not polish</span>
+        </div>
+        <div style="display:grid;grid-template-columns:76px 1fr;gap:18px;align-items:baseline;padding:14px 0">
+          <span style="font:600 15px Archivo,sans-serif;color:{{ c.accentText }}">3:30</span>
+          <span style="font:400 16.5px/1.55 Archivo,sans-serif">wrap up, or keep working if you're in the zone</span>
+        </div>
+      </div>
+      
+    </section>
+
+    <section id="questions" style="display:flex;flex-direction:column;gap:26px;scroll-margin-top:80px">
+      <div style="font:600 12px Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:{{ c.muted }};border-top:1.5px solid {{ c.border }};padding-top:14px">Questions</div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="font:400 19px/1.3 'Archivo Black',sans-serif;letter-spacing:-.02em">Is this a hackathon?</div>
+        <p style="margin:0;font:400 16.5px/1.65 Archivo,sans-serif;color:{{ c.muted }}">No. No shared challenge, no teams, no prize, nothing to prepare. Bring whatever you're already building, or just an idea and a laptop.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="font:400 19px/1.3 'Archivo Black',sans-serif;letter-spacing:-.02em">Is this an incubator or accelerator?</div>
+        <p style="margin:0;font:400 16.5px/1.65 Archivo,sans-serif;color:{{ c.muted }}">Also no. No equity, no program, no application, no demo day. An incubator takes a slice of your company. This takes a Friday.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="font:400 19px/1.3 'Archivo Black',sans-serif;letter-spacing:-.02em">Do I need a startup?</div>
+        <p style="margin:0;font:400 16.5px/1.65 Archivo,sans-serif;color:{{ c.muted }}">No. Founders, indie hackers, freelancers, side-project builders. If you're building your own thing, you're in.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="font:400 19px/1.3 'Archivo Black',sans-serif;letter-spacing:-.02em">I'm not a developer. Is this for me?</div>
+        <p style="margin:0;font:400 16.5px/1.65 Archivo,sans-serif;color:{{ c.muted }}">Yes. Designers, marketers, product people and writers are regulars. "Building" means making anything real: a landing page, a pitch, a first customer conversation.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="font:400 19px/1.3 'Archivo Black',sans-serif;letter-spacing:-.02em">What's the catch?</div>
+        <p style="margin:0;font:400 16.5px/1.65 Archivo,sans-serif;color:{{ c.muted }}">There isn't one. It's free, the venue is sponsored, and nobody is selling you anything.</p>
+      </div>
+    </section>
+
+    <section style="display:flex;flex-direction:column;gap:18px">
+      <div style="font:600 12px Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:{{ c.muted }};border-top:1.5px solid {{ c.border }};padding-top:14px">About</div>
+      <p style="margin:0;font:400 16.5px/1.7 Archivo,sans-serif;color:{{ c.ink }}">HackAotearoa was started in Auckland in March 2026, with more cities coming soon.&nbsp;</p>
+      
+      <p style="margin:0;font:400 16.5px/1.7 Archivo,sans-serif;color:{{ c.muted }}">If you want to run one where you are, email:&nbsp;&nbsp;<a href="mailto:james@hackaotearoa.nz" style="color: rgb(85, 88, 76); font-weight: 600;">james@hackaotearoa.nz</a>.</p>
+      
+    </section>
+
+    <section style="display:flex;flex-direction:column;gap:24px">
+      <div style="border-top:1.5px solid {{ c.border }};padding-top:34px;display:flex;align-items:center;gap:22px;flex-wrap:wrap">
+        <div style="font:400 34px/1.1 'Archivo Black',sans-serif;letter-spacing:-.028em">Coming to the next one?</div>
+        <a href="{{ lumaUrl }}" style="font:600 16px Archivo,sans-serif;text-decoration:none;background:{{ c.ink }};color:{{ c.paper }};padding:15px 24px;border-radius:9px">RSVP on Luma →</a>
+      </div>
+      <div style="border-radius:12px;overflow:hidden;background:{{ c.surface }};border:1.5px solid {{ c.border }}">
+        <iframe src="{{ lumaEmbedUrl }}" title="HackAotearoa events calendar" style="width:100%;height:450px;border:0;display:block" allowfullscreen="" tabindex="0"></iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="background:{{ c.ink }};color:{{ c.paper }}">
+    <div style="max-width:720px;margin:0 auto;padding:44px 32px 96px;display:flex;flex-direction:column;gap:26px">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:32px;flex-wrap:wrap">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="font:400 24px/1 'Archivo Black',sans-serif;letter-spacing:-.025em">HackAotearoa<span style="color:{{ c.accentOnDark }}">*</span></div>
+          <div style="font: 500 14px Archivo,sans-serif; color: #D8F24B">The co-working community for NZ startup builders.</div>
+          
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <a href="{{ lumaUrl }}" style="font:500 14px Archivo,sans-serif;color:{{ c.paper }};text-decoration:none">Calendar</a>
+          <a href="https://www.linkedin.com/company/hackaotearoa/" style="font:500 14px Archivo,sans-serif;color:{{ c.paper }};text-decoration:none">LinkedIn</a>
+          <a href="mailto:james@hackaotearoa.nz" style="font:500 14px Archivo,sans-serif;color:{{ c.paper }};text-decoration:none">Contact</a>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,.16);padding-top:18px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+        <span style="font:600 11px Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:{{ c.mutedOnDark }}">Est. March 2026 · Auckland</span>
+        
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;sessionDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Friday 7 August&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Next session&quot;},&quot;sessionTime&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;9:30 to 3:30&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Next session&quot;},&quot;lumaUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://luma.com/hackaotearoa&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Luma&quot;},&quot;lumaEmbedUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://luma.com/embed/calendar/cal-yoCWwRWRLq8Cqnu/events&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Luma&quot;}}">
+// Locked palette: 2a — Hi-vis carbon
+const HI_VIS_CARBON = {
+  ink:"#1A1B17", paper:"#F4F4EE", surface:"#E9EADF", border:"rgba(0,0,0,.13)",
+  accent:"#D8F24B", accentText:"#55584C", accentOnDark:"#D8F24B", onAccent:"#1A1B17",
+  muted:"#55584C", mutedOnDark:"#B9BCA9"
+};
+
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      c: HI_VIS_CARBON,
+      sessionDate: this.props.sessionDate ?? "Friday 7 August",
+      sessionTime: this.props.sessionTime ?? "9:00 to 3:30",
+      lumaUrl: this.props.lumaUrl ?? "https://luma.com/calendar/cal-yoCWwRWRLq8Cqnu",
+      lumaEmbedUrl: this.props.lumaEmbedUrl ?? "https://luma.com/embed/calendar/cal-yoCWwRWRLq8Cqnu/events"
+    };
+  }
+}
+</script>
+</body>
+</html>
