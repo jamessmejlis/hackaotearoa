@@ -21,7 +21,7 @@
 
   /* Horizontal breathing room for every band. Narrows on small screens. */
   --pad: 32px;
-  --column: 720px;
+  --column: 780px;
 }
 
 *,
