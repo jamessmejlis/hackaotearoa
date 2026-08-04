@@ -78,11 +78,18 @@ a {
 .btn {
   display: inline-flex;
   align-items: center;
+  gap: 10px;
   font-size: 16px;
   font-weight: 600;
   text-decoration: none;
   padding: 15px 24px;
   border-radius: 9px;
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 .btn-accent {
@@ -138,6 +145,7 @@ a {
 .header-rsvp {
   display: inline-flex;
   align-items: center;
+  gap: 8px;
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
@@ -145,6 +153,11 @@ a {
   color: var(--ink);
   padding: 9px 15px;
   border-radius: 7px;
+}
+
+.header-rsvp .btn-icon {
+  width: 16px;
+  height: 16px;
 }
 
 /* Hero ----------------------------------------------------------------- */
@@ -211,6 +224,12 @@ a {
 .hero-detail strong {
   font-weight: 700;
   color: var(--accent);
+}
+
+/* Accent on ink is 14.9:1 — the one place accent may carry link text. */
+.hero-link {
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .hero-actions {
@@ -328,6 +347,40 @@ a {
   margin: 0;
   font-size: 16.5px;
   line-height: 1.55;
+}
+
+.schedule-what strong {
+  font-weight: 700;
+}
+
+/* Where ---------------------------------------------------------------- */
+
+.where {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.where-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.where-city {
+  font-family: var(--font-archivo-black), sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.where-detail {
+  margin: 0;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--muted);
 }
 
 /* Questions ------------------------------------------------------------ */

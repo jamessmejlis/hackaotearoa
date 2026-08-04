@@ -5,11 +5,25 @@
  * update them here after each event, nowhere else.
  */
 
-export const SESSION_DATE = "Friday 7 August";
-export const SESSION_TIME = "9:30 to 3:30";
+export const SESSION_DATE = "Friday, 7th of August";
+export const SESSION_TIME = "9:30 a.m.";
 
 /** Public Luma calendar — every RSVP button points here. */
 export const LUMA_URL = "https://luma.com/hackaotearoa";
+
+/**
+ * Same national calendar, filtered to Wellington-tagged events.
+ * Not linked anywhere yet — the Where section says "coming soon" until the
+ * first Wellington session is announced. Re-link it there when that happens.
+ */
+export const LUMA_WELLINGTON_URL = "https://luma.com/hackaotearoa?tag=wellington";
+
+/**
+ * WFW partnership page — the primary listing for Wellington details, the
+ * city-three vote, and co-host signups (agreement section 3: Wellington
+ * details live there, not here).
+ */
+export const WFW_URL = "https://whatfounderswant.com/hackaotearoa";
 
 /**
  * Embed source for the calendar iframe in the closing section.
@@ -31,4 +45,4 @@ export const SITE_URL =
 
 export const SITE_NAME = "HackAotearoa";
 export const SITE_DESCRIPTION =
-  "A free co-working day for startup founders, indie hackers, designers and makers building their own thing. Every second Friday at GridAKL, Auckland.";
+  "A free co-working day for startup founders, indie hackers, designers and makers. Every second Friday in Auckland and Wellington.";

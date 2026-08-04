@@ -5,16 +5,32 @@ import {
   LUMA_URL,
   SESSION_DATE,
   SESSION_TIME,
+  WFW_URL,
 } from "@/lib/site";
 
 const SCHEDULE = [
-  { time: "9:00", what: "doors open, coffee, grab a desk" },
+  { time: "9:00", lead: "Doors open.", rest: " Coffee, grab a desk, settle in." },
   {
     time: "9:30",
-    what: "intros: who you are, what you're building, what you want to get done today",
+    lead: "Intros.",
+    rest: " Who you are, what you're building, what you want to get done today.",
   },
-  { time: "3:00", what: "demos: 5 minutes each, progress not polish" },
-  { time: "3:30", what: "wrap up, or keep working if you're in the zone" },
+  {
+    time: "All day",
+    lead: "Build.",
+    rest: " Heads down on your own thing, alongside everyone doing the same — ask for help when you're stuck.",
+  },
+  { time: "12:00", lead: "Lunch.", rest: " Together, if you want." },
+  {
+    time: "4:00",
+    lead: "Demos.",
+    rest: " Five minutes each, optional. Progress, not polish.",
+  },
+  {
+    time: "5:00",
+    lead: "Wrap up.",
+    rest: " Or keep working if you're in the zone.",
+  },
 ];
 
 const QUESTIONS = [
@@ -55,6 +71,26 @@ const POINTS = [
   },
 ];
 
+function CalendarIcon() {
+  return (
+    <svg
+      className="btn-icon"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M8 2v4" />
+      <path d="M16 2v4" />
+      <rect x="3" y="4" width="18" height="18" rx="2" />
+      <path d="M3 10h18" />
+    </svg>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -76,7 +112,8 @@ export default function Home() {
               Questions
             </a>
             <a href={LUMA_URL} className="header-rsvp">
-              RSVP
+              <CalendarIcon />
+              Events
             </a>
           </nav>
         </div>
@@ -99,14 +136,22 @@ export default function Home() {
           </div>
 
           <p className="hero-detail">
-            Free, every second Friday at GridAKL, Wynyard Quarter, Auckland.
+            Free, every second Friday. Auckland + Wellington.
             <br />
-            Next session: <strong>{SESSION_DATE}</strong>, {SESSION_TIME}.
+            {/* No period here — SESSION_TIME ("9:30 a.m.") ends the sentence. */}
+            Next Auckland session: <strong>{SESSION_DATE}</strong>,{" "}
+            {SESSION_TIME}
+            <br />
+            Wellington:{" "}
+            <a href={WFW_URL} className="hero-link">
+              first session announcing soon →
+            </a>
           </p>
 
           <div className="hero-actions">
             <a href={LUMA_URL} className="btn btn-accent">
-              RSVP on Luma →
+              <CalendarIcon />
+              RSVP to the next event
             </a>
           </div>
         </div>
@@ -118,8 +163,8 @@ export default function Home() {
           <p className="prose">
             HackAotearoa is a free co-working day for startup founders, indie
             hackers, designers and makers building their own thing. Every second
-            Friday in Auckland: one full day, working alongside other people
-            doing the same. No program, no curriculum, no pitching.
+            Friday: one full day, working alongside other people doing the
+            same. No program, no curriculum, no pitching.
           </p>
           <p className="prose">
             On any given Friday there's someone launching a website, someone
@@ -141,18 +186,67 @@ export default function Home() {
             ))}
           </ul>
 
-          <p className="proof">80+ builders through the door since March.</p>
+          <p className="proof">
+            Over 100 builders through the door since March.
+          </p>
         </section>
 
         <section id="day" className="section day-section">
           <h2 className="label">The day</h2>
+          <p className="prose">
+            No agenda to sit through. You show up, say what you're building,
+            and build it. That's the whole shape of the day.
+          </p>
           <dl className="schedule">
             {SCHEDULE.map((row) => (
               <div key={row.time} className="schedule-row">
                 <dt className="schedule-time">{row.time}</dt>
-                <dd className="schedule-what">{row.what}</dd>
+                <dd className="schedule-what">
+                  <strong>{row.lead}</strong>
+                  {row.rest}
+                </dd>
               </div>
             ))}
+          </dl>
+        </section>
+
+        {/* id is "wellington", not "where" — Lane's blog and the WFW page
+            link to hackaotearoa.nz/#wellington. Don't rename it. */}
+        <section id="wellington" className="section">
+          <h2 className="label">Where</h2>
+          <dl className="where">
+            <div className="where-item">
+              <dt className="where-city">Auckland</dt>
+              <dd className="where-detail">
+                GridAKL, Wynyard Quarter. Every second Friday.{" "}
+                <a href={LUMA_URL} className="inline-link">
+                  RSVP to the next event →
+                </a>
+              </dd>
+            </div>
+            <div className="where-item">
+              <dt className="where-city">Wellington</dt>
+              <dd className="where-detail">
+                Run by{" "}
+                <a href={WFW_URL} className="inline-link">
+                  What Founders Want
+                </a>
+                , our national distribution partner. Same format, same price:
+                free. First session announcing soon.{" "}
+                <a href={LUMA_URL} className="inline-link">
+                  Sign up to get notified →
+                </a>
+              </dd>
+            </div>
+            <div className="where-item">
+              <dt className="where-city">Your city</dt>
+              <dd className="where-detail">
+                Auckland works. Wellington is starting.{" "}
+                <a href={WFW_URL} className="inline-link">
+                  You tell us the third city →
+                </a>
+              </dd>
+            </div>
           </dl>
         </section>
 
@@ -171,11 +265,19 @@ export default function Home() {
         <section className="section about-section">
           <h2 className="label">About</h2>
           <p className="about-p">
-            HackAotearoa was started in Auckland in March 2026, with more cities
-            coming soon.
+            HackAotearoa started in Auckland in March 2026. Wellington is
+            chapter two, run by{" "}
+            <a href={WFW_URL} className="inline-link">
+              What Founders Want
+            </a>
+            .
           </p>
           <p className="about-p about-p-muted">
-            If you want to run one where you are, email:{" "}
+            Want it in your city?{" "}
+            <a href={WFW_URL} className="inline-link">
+              Vote for city number three
+            </a>
+            , put your hand up to run or co-host, or offer a venue — or email{" "}
             <a href={`mailto:${CONTACT_EMAIL}`} className="inline-link">
               {CONTACT_EMAIL}
             </a>
@@ -187,7 +289,8 @@ export default function Home() {
           <div className="closing-row">
             <p className="closing-question">Coming to the next one?</p>
             <a href={LUMA_URL} className="btn btn-ink">
-              RSVP on Luma →
+              <CalendarIcon />
+              RSVP to the next event
             </a>
           </div>
           <div className="calendar-well">
@@ -228,7 +331,9 @@ export default function Home() {
             </nav>
           </div>
           <div className="footer-bottom">
-            <span className="footer-meta">Est. March 2026 · Auckland</span>
+            <span className="footer-meta">
+              Est. March 2026 · Auckland + Wellington
+            </span>
           </div>
         </div>
       </footer>
