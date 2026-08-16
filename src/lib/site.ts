@@ -5,7 +5,7 @@
  * update them here after each event, nowhere else.
  */
 
-export const SESSION_DATE = "Friday, 7th of August";
+export const SESSION_DATE = "Friday, 21st of August";
 export const SESSION_TIME = "9:30 a.m.";
 
 /** Public Luma calendar — every RSVP button points here. */
