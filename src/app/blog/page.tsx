@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { formatDate, getAllPosts } from "@/lib/posts";
-import { BLOG_DESCRIPTION, FEED_URL, SITE_NAME } from "@/lib/site";
+import { BLOG_DESCRIPTION, FEED_URL, OG_IMAGE, SITE_NAME } from "@/lib/site";
 
 const TITLE = `Blog — ${SITE_NAME}`;
 
@@ -21,11 +21,13 @@ export const metadata: Metadata = {
     url: "/blog",
     title: TITLE,
     description: BLOG_DESCRIPTION,
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: BLOG_DESCRIPTION,
+    images: [OG_IMAGE],
   },
 };
 

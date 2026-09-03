@@ -6,7 +6,7 @@ import { CalendarIcon } from "@/components/CalendarIcon";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { formatDate, getAllPosts, getPost } from "@/lib/posts";
-import { FEED_URL, LUMA_URL, SITE_NAME, SITE_URL } from "@/lib/site";
+import { FEED_URL, LUMA_URL, OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -40,11 +40,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description: post.description,
       publishedTime: `${post.date}T00:00:00.000Z`,
+      images: [OG_IMAGE],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description: post.description,
+      images: [OG_IMAGE],
     },
   };
 }
