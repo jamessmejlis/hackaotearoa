@@ -31,7 +31,7 @@ const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const REQUIRED = ["title", "date", "description"] as const;
 
 function readPost(dir: string, file: string): Post & { draft: boolean } {
-  const filePath = path.join(dir, file);
+  const filePath = path.join(/* turbopackIgnore: true */ dir, file);
   const label = path.relative(process.cwd(), filePath);
   const { data, content } = matter(fs.readFileSync(filePath, "utf8"));
 
@@ -68,10 +68,13 @@ export function getAllPosts(options: Options = {}): Post[] {
   const includeDrafts =
     options.includeDrafts ?? process.env.NODE_ENV !== "production";
 
-  if (!fs.existsSync(dir)) return [];
+  // `dir` is only dynamic so tests can point at fixtures. The ignore comments
+  // stop Next's output file tracing from pulling the whole repo into the
+  // feed route's function bundle.
+  if (!fs.existsSync(/* turbopackIgnore: true */ dir)) return [];
 
   return fs
-    .readdirSync(dir)
+    .readdirSync(/* turbopackIgnore: true */ dir)
     .filter((file) => file.endsWith(".md"))
     .map((file) => readPost(dir, file))
     .filter((post) => includeDrafts || !post.draft)
