@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CalendarIcon } from "@/components/CalendarIcon";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -10,6 +11,7 @@ import {
   SESSION_TIME,
   WFW_URL,
 } from "@/lib/site";
+import { formatDate, getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -79,6 +81,8 @@ const POINTS = [
 ];
 
 export default function Home() {
+  const latestPosts = getAllPosts().slice(0, 3);
+
   return (
     <>
       <SiteHeader />
@@ -225,6 +229,27 @@ export default function Home() {
             ))}
           </dl>
         </section>
+
+        {latestPosts.length > 0 && (
+          <section id="blog" className="section">
+            <h2 className="label">Blog</h2>
+            <ul className="post-list">
+              {latestPosts.map((post) => (
+                <li key={post.slug} className="post-list-item">
+                  <Link href={`/blog/${post.slug}`} className="post-link">
+                    <time dateTime={post.date} className="post-date">
+                      {formatDate(post.date)}
+                    </time>
+                    <span className="post-title">{post.title}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link href="/blog" className="inline-link all-posts">
+              All posts →
+            </Link>
+          </section>
+        )}
 
         <section className="section about-section">
           <h2 className="label">About</h2>
