@@ -540,6 +540,76 @@ a {
   color: var(--muted-on-dark);
 }
 
+/* Blog listing (used on /blog and the homepage section) ---------------- */
+
+.blog-intro {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.post-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-list-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.post-list-item:last-child {
+  border-bottom: 0;
+}
+
+.post-link {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 0;
+  text-decoration: none;
+}
+
+.post-link:hover .post-title {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.post-date {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.post-title {
+  font-family: var(--font-archivo-black), sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.post-summary {
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.all-posts {
+  align-self: flex-start;
+  text-decoration: none;
+}
+
+.all-posts:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* Focus ---------------------------------------------------------------- */
 
 a:focus-visible {
