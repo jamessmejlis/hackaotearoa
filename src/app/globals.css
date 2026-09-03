@@ -610,6 +610,147 @@ a {
   text-underline-offset: 3px;
 }
 
+/* Blog post ------------------------------------------------------------ */
+
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.post-header {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.back-link {
+  align-self: flex-start;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-text);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.post-h1 {
+  margin: 0;
+  font-family: var(--font-archivo-black), sans-serif;
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -0.028em;
+}
+
+.post-lead {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Everything react-markdown emits is scoped here so nothing leaks out. */
+.post-body {
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.post-body > :first-child {
+  margin-top: 0;
+}
+
+.post-body > :last-child {
+  margin-bottom: 0;
+}
+
+.post-body p {
+  margin: 0 0 1.2em;
+}
+
+.post-body h2 {
+  margin: 2em 0 0.6em;
+  font-family: var(--font-archivo-black), sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.post-body h3 {
+  margin: 1.6em 0 0.5em;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.post-body ul,
+.post-body ol {
+  margin: 0 0 1.2em;
+  padding-left: 1.4em;
+}
+
+.post-body li {
+  margin-bottom: 0.4em;
+}
+
+.post-body a {
+  color: var(--accent-text);
+  font-weight: 600;
+}
+
+.post-body strong {
+  font-weight: 700;
+}
+
+.post-body blockquote {
+  margin: 0 0 1.2em;
+  padding: 4px 0 4px 20px;
+  border-left: 3px solid var(--accent);
+  color: var(--muted);
+  font-style: italic;
+}
+
+.post-body code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: var(--surface);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+
+.post-body pre {
+  margin: 0 0 1.2em;
+  padding: 18px 20px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+.post-body pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-size: 14px;
+}
+
+.post-body hr {
+  border: 0;
+  border-top: 1.5px solid var(--border);
+  margin: 2em 0;
+}
+
+.post-body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
 /* Focus ---------------------------------------------------------------- */
 
 a:focus-visible {
@@ -644,6 +785,14 @@ a:focus-visible {
 
   .closing-question {
     font-size: 26px;
+  }
+
+  .post-h1 {
+    font-size: 28px;
+  }
+
+  .post-body h2 {
+    font-size: 21px;
   }
 
   .main {
