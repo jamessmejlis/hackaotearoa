@@ -46,3 +46,10 @@ export const SITE_URL =
 export const SITE_NAME = "HackAotearoa";
 export const SITE_DESCRIPTION =
   "A free co-working day for startup founders, indie hackers, designers and makers. Every second Friday in Auckland and Wellington.";
+
+/** Blog listing page meta description and RSS channel description. */
+export const BLOG_DESCRIPTION =
+  "Recaps, chapter news and occasional notes from HackAotearoa.";
+
+/** Absolute feed URL — used in <head> alternates and the feed's self link. */
+export const FEED_URL = `${SITE_URL}/blog/feed.xml`;
