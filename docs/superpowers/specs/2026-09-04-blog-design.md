@@ -178,8 +178,7 @@ pages can set their own canonicals without fighting the root.
 
 ## 7. First post
 
-`content/blog/why-a-blog.md` (working slug; title to be finalised in the
-plan). Voice: same as the homepage — plain, short sentences, no hype.
+`content/blog/why-a-blog.md`, titled "Why HackAotearoa has a blog". Voice: same as the homepage — plain, short sentences, no hype.
 Roughly 250–400 words covering:
 
 - What this blog is for: recaps, chapter news, the odd longer note. Not a
