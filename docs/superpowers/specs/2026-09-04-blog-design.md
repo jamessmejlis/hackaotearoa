@@ -154,8 +154,11 @@ No visual change to the homepage beyond the added "Blog" links. The
   (the URL), `pubDate` (RFC 822, from the ISO date at 00:00 UTC) and
   `description` (frontmatter description, XML-escaped). Content-Type
   `application/rss+xml; charset=utf-8`. The route is static.
-- Root layout adds `alternates.types["application/rss+xml"]` pointing at
-  the feed so browsers and readers discover it.
+- Every page's metadata includes `alternates.types["application/rss+xml"]`
+  pointing at the feed so browsers and readers discover it. It lives per
+  page, not in the root layout, because Next replaces a child's whole
+  `alternates` object rather than merging it, and each page already needs
+  its own canonical there.
 
 ### Homepage — `src/app/page.tsx`
 
