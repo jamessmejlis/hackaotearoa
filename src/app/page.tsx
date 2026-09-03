@@ -1,12 +1,19 @@
+import type { Metadata } from "next";
+import { CalendarIcon } from "@/components/CalendarIcon";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SiteHeader } from "@/components/SiteHeader";
 import {
   CONTACT_EMAIL,
-  LINKEDIN_URL,
   LUMA_EMBED_URL,
   LUMA_URL,
   SESSION_DATE,
   SESSION_TIME,
   WFW_URL,
 } from "@/lib/site";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const SCHEDULE = [
   { time: "9:00", lead: "Doors open.", rest: " Coffee, grab a desk, settle in." },
@@ -71,53 +78,10 @@ const POINTS = [
   },
 ];
 
-function CalendarIcon() {
-  return (
-    <svg
-      className="btn-icon"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M8 2v4" />
-      <path d="M16 2v4" />
-      <rect x="3" y="4" width="18" height="18" rx="2" />
-      <path d="M3 10h18" />
-    </svg>
-  );
-}
-
 export default function Home() {
   return (
     <>
-      <header className="header">
-        <div className="column header-inner">
-          <a href="#top" className="wordmark header-wordmark">
-            <span>
-              HackAotearoa
-              <span className="star" aria-hidden="true">
-                *
-              </span>
-            </span>
-          </a>
-          <nav className="header-nav">
-            <a href="#day" className="header-link">
-              The day
-            </a>
-            <a href="#questions" className="header-link">
-              Questions
-            </a>
-            <a href={LUMA_URL} className="header-rsvp">
-              <CalendarIcon />
-              Events
-            </a>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       <section id="top" className="hero">
         <div className="column hero-inner">
@@ -304,39 +268,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="footer">
-        <div className="column footer-inner">
-          <div className="footer-top">
-            <div className="footer-brand">
-              <div className="wordmark footer-wordmark">
-                HackAotearoa
-                <span className="star" aria-hidden="true">
-                  *
-                </span>
-              </div>
-              <p className="footer-tagline">
-                The co-working community for NZ startup builders.
-              </p>
-            </div>
-            <nav className="footer-links">
-              <a href={LUMA_URL} className="footer-link">
-                Calendar
-              </a>
-              <a href={LINKEDIN_URL} className="footer-link">
-                LinkedIn
-              </a>
-              <a href={`mailto:${CONTACT_EMAIL}`} className="footer-link">
-                Contact
-              </a>
-            </nav>
-          </div>
-          <div className="footer-bottom">
-            <span className="footer-meta">
-              Est. March 2026 · Auckland + Wellington
-            </span>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }

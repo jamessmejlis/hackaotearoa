@@ -24,7 +24,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "HackAotearoa — the co-working community for NZ startup builders",
   description: SITE_DESCRIPTION,
-  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
