@@ -254,6 +254,18 @@ Parallel James errands (none blocked by the design work — do any time):
 - [ ] **[James] Launch sequence** — per strategy §7.2: joint LinkedIn
       announcement (your post, her repost in her own words), WFW newsletter
       feature linking the waitlist, first WLG recap posted by you tagging her.
+- [x] **DONE 2026-09-04: blog live at https://www.hackaotearoa.nz/blog.**
+      Lane's launch plan listed an "HA Blog" channel that didn't exist, and
+      the partnership agreement requires website backlinks to WFW — this is
+      the link target for both. Posts are markdown in `content/blog/` (see
+      README); `/blog` listing, per-post pages with article metadata +
+      JSON-LD, RSS at `/blog/feed.xml`, sitemap entries, latest-three section
+      and nav/footer links on the homepage. First post: "HackAotearoa is going
+      national, starting with Wellington" (from James's Google Doc), with four
+      followed links to whatfounderswant.com and the WFW HackAotearoa page,
+      and the Luma calendar as the booking link. Spec:
+      `docs/superpowers/specs/2026-09-04-blog-design.md`. Not a newsletter —
+      no cadence commitment (strategy §12.4 still holds).
 
 ### Milestone 4 — Marketing engine plugged in
 
