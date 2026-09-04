@@ -36,6 +36,11 @@ html {
 
 body {
   margin: 0;
+  /* Fill the viewport so the footer sits at the bottom of short pages
+     (the blog listing) instead of floating mid-screen. */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-archivo), system-ui, sans-serif;
@@ -242,6 +247,9 @@ a {
 /* Main ----------------------------------------------------------------- */
 
 .main {
+  /* Grows to push the footer to the bottom; width keeps .column centring. */
+  flex: 1 0 auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 76px;
