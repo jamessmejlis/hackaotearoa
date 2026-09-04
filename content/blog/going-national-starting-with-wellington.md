@@ -6,7 +6,7 @@ description: What Founders Want is running our Wellington chapter, and helping u
 
 HackAotearoa started in Auckland in March 2026. One free day every second Friday where founders show up and build their own thing in the same room. No speakers, no pitching, no programme to apply to. More than 100 builders have come through the door at GridAKL on word of mouth alone.
 
-Now it's expanding beyond Auckland. What Founders Want is launching our Wellington chapter, and taking on the job of helping HackAotearoa reach other cities after that.
+Now it's expanding beyond Auckland. [What Founders Want](https://whatfounderswant.com) is launching our Wellington chapter, and taking on the job of helping HackAotearoa reach other cities after that.
 
 ## Why this partnership
 
@@ -24,9 +24,9 @@ You can read every right answer and still stall out alone. You can have all the 
 
 ## What this means if you're in Wellington
 
-A free co-working day is coming to Wellington, same format as Auckland. You show up, say what you're building, and build it alongside other founders doing the same thing. Lane Litz, who runs What Founders Want, runs the Wellington chapter in person. The first session and venue are being locked in now.
+A free co-working day is coming to Wellington, same format as Auckland. You show up, say what you're building, and build it alongside other founders doing the same thing. Lane Litz, who runs What Founders Want, runs the Wellington chapter in person. The first session and venue are being locked in now, and the details will land on the [HackAotearoa page on What Founders Want](https://whatfounderswant.com/hackaotearoa).
 
-Booking link coming soon.
+[Book your spot on Luma](https://luma.com/hackaotearoa).
 
 ## What this means if you're somewhere else
 
@@ -38,7 +38,7 @@ Vote for where HackAotearoa should go next. And if you want to make it happen wh
 
 ## Who runs what
 
-HackAotearoa owns the brand, the format and the community. What Founders Want is our national distribution partner and runs the Wellington chapter in person. Two independent organisations, not a legal partnership or an advisory arrangement. Founders pay nothing to either, at any point. That isn't a launch offer. It's the whole point.
+HackAotearoa owns the brand, the format and the community. What Founders Want is our [national distribution partner](https://whatfounderswant.com/hackaotearoa) and runs the Wellington chapter in person. Two independent organisations, not a legal partnership or an advisory arrangement. Founders pay nothing to either, at any point. That isn't a launch offer. It's the whole point.
 
 **RSVP to Auckland:** [luma.com/hackaotearoa](https://luma.com/hackaotearoa)
 
